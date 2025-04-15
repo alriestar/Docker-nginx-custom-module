@@ -25,7 +25,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.SECRETS_GITHUB_TOKEN }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
@@ -33,4 +33,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/nginx-custom:latest
+          tags: ghcr.io/${{ github.repository_owner }}/Docker-nginx-custom-module:latest
